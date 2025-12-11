@@ -1,0 +1,301 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red239\green239\blue239;\red32\green33\blue35;}
+{\*\expandedcolortbl;;\cssrgb\c94902\c94902\c94902;\cssrgb\c16863\c17255\c18431;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa80\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+<!DOCTYPE html>\
+<html lang="ru">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>\uc0\u55357 \u56622  \u1050 \u1080 \u1086 \u1089 \u1082  \u1055 \u1088 \u1077 \u1076 \u1089 \u1082 \u1072 \u1079 \u1072 \u1085 \u1080 \u1081 </title>\
+    <style>\
+        * \{\
+            margin: 0;\
+            padding: 0;\
+            box-sizing: border-box;\
+        \}\
+\
+        body \{\
+            display: flex;\
+            justify-content: center;\
+            align-items: center;\
+            min-height: 100vh;\
+            background: linear-gradient(135deg, #1a0033 0%, #2d0052 100%);\
+            font-family: 'Arial', sans-serif;\
+            overflow: hidden;\
+        \}\
+\
+        .container \{\
+            width: 100%;\
+            max-width: 500px;\
+            height: 100vh;\
+            display: flex;\
+            flex-direction: column;\
+            justify-content: center;\
+            align-items: center;\
+            padding: 20px;\
+        \}\
+\
+        /* \uc0\u1050 \u1048 \u1054 \u1057 \u1050  */\
+        .kiosk \{\
+            width: 100%;\
+            max-width: 400px;\
+            background: radial-gradient(circle at 30% 30%, #4a0e4e, #1a0033);\
+            border: 4px solid #ffd700;\
+            border-radius: 20px;\
+            padding: 40px 20px;\
+            text-align: center;\
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.4),\
+                        inset 0 0 30px rgba(255, 255, 255, 0.1);\
+            animation: glow 3s ease-in-out infinite;\
+        \}\
+\
+        @keyframes glow \{\
+            0%, 100% \{ box-shadow: 0 0 40px rgba(255, 215, 0, 0.4); \}\
+            50% \{ box-shadow: 0 0 60px rgba(255, 215, 0, 0.6); \}\
+        \}\
+\
+        .title \{\
+            font-size: 28px;\
+            color: #ffd700;\
+            margin-bottom: 20px;\
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);\
+            font-weight: bold;\
+        \}\
+\
+        .crystal-ball \{\
+            font-size: 80px;\
+            margin: 30px 0;\
+            animation: spin 8s linear infinite;\
+        \}\
+\
+        @keyframes spin \{\
+            0% \{ transform: rotate(0deg); \}\
+            100% \{ transform: rotate(360deg); \}\
+        \}\
+\
+        .button-container \{\
+            margin-top: 30px;\
+        \}\
+\
+        .main-btn \{\
+            width: 100px;\
+            height: 100px;\
+            border-radius: 50%;\
+            border: 3px solid #ffd700;\
+            background: radial-gradient(circle at 30% 30%, #ffed4e, #ffd700);\
+            font-size: 40px;\
+            cursor: pointer;\
+            transition: all 0.3s ease;\
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);\
+        \}\
+\
+        .main-btn:hover \{\
+            transform: scale(1.1);\
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);\
+        \}\
+\
+        .main-btn:active \{\
+            transform: scale(0.95);\
+        \}\
+\
+        .prediction-text \{\
+            font-size: 22px;\
+            color: #ffd700;\
+            margin-top: 20px;\
+            min-height: 60px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            font-weight: bold;\
+        \}\
+\
+        .hidden \{\
+            display: none;\
+        \}\
+\
+        /* \uc0\u1069 \u1050 \u1056 \u1040 \u1053  \u1055 \u1056 \u1045 \u1044 \u1057 \u1050 \u1040 \u1047 \u1040 \u1053 \u1048 \u1071  */\
+        .prediction-screen \{\
+            position: fixed;\
+            top: 0;\
+            left: 0;\
+            width: 100%;\
+            height: 100%;\
+            background: radial-gradient(circle at center, #2d0052, #0a0015);\
+            display: none;\
+            flex-direction: column;\
+            justify-content: center;\
+            align-items: center;\
+            z-index: 1000;\
+            animation: fadeIn 0.5s ease-in;\
+        \}\
+\
+        @keyframes fadeIn \{\
+            from \{ opacity: 0; \}\
+            to \{ opacity: 1; \}\
+        \}\
+\
+        .prediction-screen.active \{\
+            display: flex;\
+        \}\
+\
+        .prediction-content \{\
+            text-align: center;\
+            padding: 40px;\
+        \}\
+\
+        .prediction-ball \{\
+            font-size: 120px;\
+            margin-bottom: 30px;\
+            animation: float 3s ease-in-out infinite;\
+        \}\
+\
+        @keyframes float \{\
+            0%, 100% \{ transform: translateY(0px); \}\
+            50% \{ transform: translateY(-20px); \}\
+        \}\
+\
+        .prediction-message \{\
+            font-size: 32px;\
+            color: #ffd700;\
+            margin: 40px 0;\
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);\
+            font-weight: bold;\
+            line-height: 1.4;\
+        \}\
+\
+        .button-group \{\
+            display: flex;\
+            gap: 15px;\
+            justify-content: center;\
+            margin-top: 50px;\
+        \}\
+\
+        .btn \{\
+            padding: 12px 30px;\
+            font-size: 16px;\
+            border: 2px solid #ffd700;\
+            background: rgba(255, 215, 0, 0.1);\
+            color: #ffd700;\
+            border-radius: 8px;\
+            cursor: pointer;\
+            transition: all 0.3s ease;\
+            font-weight: bold;\
+        \}\
+\
+        .btn:hover \{\
+            background: rgba(255, 215, 0, 0.3);\
+            transform: scale(1.05);\
+        \}\
+\
+        .btn:active \{\
+            transform: scale(0.95);\
+        \}\
+\
+        /* \uc0\u1047 \u1042 \u1025 \u1047 \u1044 \u1067  \u1053 \u1040  \u1060 \u1054 \u1053 \u1045  */\
+        .stars \{\
+            position: absolute;\
+            width: 2px;\
+            height: 2px;\
+            background: white;\
+            border-radius: 50%;\
+            animation: twinkle 3s infinite;\
+        \}\
+\
+        @keyframes twinkle \{\
+            0%, 100% \{ opacity: 0.3; \}\
+            50% \{ opacity: 1; \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <!-- \uc0\u1050 \u1048 \u1054 \u1057 \u1050  (\u1075 \u1083 \u1072 \u1074 \u1085 \u1099 \u1081  \u1101 \u1082 \u1088 \u1072 \u1085 ) -->\
+    <div class="container" id="mainScreen">\
+        <div class="kiosk">\
+            <div class="title">\uc0\u55357 \u56622  \u1050 \u1048 \u1054 \u1057 \u1050  \u1055 \u1056 \u1045 \u1044 \u1057 \u1050 \u1040 \u1047 \u1040 \u1053 \u1048 \u1049 </div>\
+            <div class="crystal-ball">\uc0\u55357 \u56622 </div>\
+            <div class="button-container">\
+                <button class="main-btn" id="predictBtn">\uc0\u8595 </button>\
+            </div>\
+            <div class="prediction-text" id="previewText"></div>\
+        </div>\
+    </div>\
+\
+    <!-- \uc0\u1069 \u1050 \u1056 \u1040 \u1053  \u1055 \u1056 \u1045 \u1044 \u1057 \u1050 \u1040 \u1047 \u1040 \u1053 \u1048 \u1071  -->\
+    <div class="prediction-screen" id="predictionScreen">\
+        <div class="prediction-content">\
+            <div class="prediction-ball">\uc0\u55357 \u56622 </div>\
+            <div class="prediction-message" id="predictionMessage"></div>\
+            <div class="button-group">\
+                <button class="btn" id="anotherBtn">\uc0\u55357 \u56580  \u1045 \u1097 \u1105 </button>\
+                <button class="btn" id="backBtn">\uc0\u8592  \u1053 \u1072 \u1079 \u1072 \u1076 </button>\
+            </div>\
+        </div>\
+    </div>\
+\
+    <script>\
+        // \uc0\u1041 \u1040 \u1047 \u1040  \u1055 \u1056 \u1045 \u1044 \u1057 \u1050 \u1040 \u1047 \u1040 \u1053 \u1048 \u1049 \
+        const predictions = [\
+            "\uc0\u10024  \u1057 \u1077 \u1075 \u1086 \u1076 \u1085 \u1103  \u1090 \u1077 \u1073 \u1103  \u1078 \u1076 \u1105 \u1090  \u1087 \u1088 \u1080 \u1103 \u1090 \u1085 \u1099 \u1081  \u1089 \u1102 \u1088 \u1087 \u1088 \u1080 \u1079 !",\
+            "\uc0\u55356 \u57263  \u1058 \u1074 \u1086 \u1103  \u1080 \u1085 \u1090 \u1091 \u1080 \u1094 \u1080 \u1103  \u1087 \u1086 \u1076 \u1074 \u1077 \u1076 \u1105 \u1090  \u1087 \u1088 \u1072 \u1074 \u1080 \u1083 \u1100 \u1085 \u1099 \u1081  \u1087 \u1091 \u1090 \u1100 ",\
+            "\uc0\u55357 \u56491  \u1042 \u1087 \u1077 \u1088 \u1077 \u1076 \u1080  \u1085 \u1086 \u1074 \u1099 \u1077  \u1074 \u1086 \u1079 \u1084 \u1086 \u1078 \u1085 \u1086 \u1089 \u1090 \u1080 !",\
+            "\uc0\u55356 \u57119  \u1042 \u1077 \u1088 \u1100  \u1074  \u1089 \u1077 \u1073 \u1103  \'97 \u1101 \u1090 \u1086  \u1082 \u1083 \u1102 \u1095  \u1082  \u1091 \u1089 \u1087 \u1077 \u1093 \u1091 ",\
+            "\uc0\u55357 \u56622  \u1057 \u1091 \u1076 \u1100 \u1073 \u1072  \u1091 \u1083 \u1099 \u1073 \u1072 \u1077 \u1090 \u1089 \u1103  \u1089 \u1084 \u1077 \u1083 \u1099 \u1084 !",\
+            "\uc0\u55357 \u56474  \u1051 \u1102 \u1073 \u1086 \u1074 \u1100  \u1082  \u1089 \u1077 \u1073 \u1077  \'97 \u1085 \u1072 \u1095 \u1072 \u1083 \u1086  \u1074 \u1089 \u1077 \u1075 \u1086 ",\
+            "\uc0\u55356 \u57258  \u1057 \u1077 \u1075 \u1086 \u1076 \u1085 \u1103  \u1076 \u1077 \u1085 \u1100  \u1085 \u1086 \u1074 \u1099 \u1093  \u1086 \u1090 \u1082 \u1088 \u1099 \u1090 \u1080 \u1081 ",\
+            "\uc0\u11088  \u1058 \u1099  \u1089 \u1080 \u1083 \u1100 \u1085 \u1077 \u1077 , \u1095 \u1077 \u1084  \u1076 \u1091 \u1084 \u1072 \u1077 \u1096 \u1100 ",\
+            "\uc0\u10024  \u1058 \u1074 \u1086 \u1105  \u1073 \u1091 \u1076 \u1091 \u1097 \u1077 \u1077  \'97 \u1074  \u1090 \u1074 \u1086 \u1080 \u1093  \u1088 \u1091 \u1082 \u1072 \u1093 ",\
+            "\uc0\u55356 \u57096  \u1055 \u1086 \u1079 \u1074 \u1086 \u1083 \u1100  \u1089 \u1077 \u1073 \u1077  \u1084 \u1077 \u1095 \u1090 \u1072 \u1090 \u1100 ",\
+            "\uc0\u55357 \u56462  \u1058 \u1099  \u1091 \u1085 \u1080 \u1082 \u1072 \u1083 \u1100 \u1085 \u1072  \u1080  \u1086 \u1089 \u1086 \u1073 \u1077 \u1085 \u1085 \u1072 ",\
+            "\uc0\u55356 \u57256  \u1058 \u1074 \u1086 \u1088 \u1095 \u1077 \u1089 \u1090 \u1074 \u1086  \u1079 \u1086 \u1074 \u1105 \u1090  \u1090 \u1077 \u1073 \u1103 "\
+        ];\
+\
+        let currentPrediction = "";\
+\
+        function getRandomPrediction() \{\
+            return predictions[Math.floor(Math.random() * predictions.length)];\
+        \}\
+\
+        // \uc0\u1050 \u1053 \u1054 \u1055 \u1050 \u1040  "\u1059 \u1047 \u1053 \u1040 \u1058 \u1068  \u1055 \u1056 \u1045 \u1044 \u1057 \u1050 \u1040 \u1047 \u1040 \u1053 \u1048 \u1045 "\
+        document.getElementById('predictBtn').addEventListener('click', () => \{\
+            currentPrediction = getRandomPrediction();\
+            document.getElementById('predictionMessage').textContent = currentPrediction;\
+            document.getElementById('mainScreen').style.display = 'none';\
+            document.getElementById('predictionScreen').classList.add('active');\
+        \});\
+\
+        // \uc0\u1050 \u1053 \u1054 \u1055 \u1050 \u1040  "\u1045 \u1065 \u1025 "\
+        document.getElementById('anotherBtn').addEventListener('click', () => \{\
+            currentPrediction = getRandomPrediction();\
+            document.getElementById('predictionMessage').textContent = currentPrediction;\
+        \});\
+\
+        // \uc0\u1050 \u1053 \u1054 \u1055 \u1050 \u1040  "\u1053 \u1040 \u1047 \u1040 \u1044 "\
+        document.getElementById('backBtn').addEventListener('click', () => \{\
+            document.getElementById('predictionScreen').classList.remove('active');\
+            document.getElementById('mainScreen').style.display = 'flex';\
+        \});\
+\
+        // \uc0\u1043 \u1045 \u1053 \u1045 \u1056 \u1048 \u1056 \u1059 \u1045 \u1052  \u1047 \u1042 \u1025 \u1047 \u1044 \u1067 \
+        function createStars() \{\
+            const starsCount = 50;\
+            for (let i = 0; i < starsCount; i++) \{\
+                const star = document.createElement('div');\
+                star.className = 'stars';\
+                star.style.left = Math.random() * 100 + '%';\
+                star.style.top = Math.random() * 100 + '%';\
+                star.style.animationDelay = Math.random() * 3 + 's';\
+                document.body.appendChild(star);\
+            \}\
+        \}\
+\
+        createStars();\
+    </script>\
+</body>\
+</html>\
+}
